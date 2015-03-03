@@ -15,3 +15,5 @@ def ventilateur():
         ts._in(("ventilateur_inactif",))
         ts._in(("etat_ventilateur","active"))
         ts._out(("etat_ventilateur","desactive"))
+
+ventilateur()

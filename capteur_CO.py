@@ -22,5 +22,9 @@ def capteur_CO(y):
         else:
             y -= 0.4*randNum
 
-    ts._in(("Niveau_CH4",float))
-    ts._out(("Niveau_CH4",y))
+    print "niveau de CO"
+    print y
+    ts._in(("niveau_CH4",float))
+    ts._out(("niveau_CH4",y))
+
+capteur_CO(0.0)

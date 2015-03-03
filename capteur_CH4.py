@@ -23,5 +23,10 @@ def capteur_CH4(y):
         else:
             y -= 0.4*randNum
 
-    ts._in(("Niveau_CH4",float))
-    ts._out(("Niveau_CH4",y))
+    print "niveau de CH4: "
+    print y
+    ts._in(("niveau_CH4",float))
+    ts._out(("niveau_CH4",y))
+
+while(1):
+    capteur_CH4(0.0)

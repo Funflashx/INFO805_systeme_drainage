@@ -2,7 +2,7 @@
 import linda
 
 linda.connect()
-ts = linda.universe._rd(("TupleSpace drainage", linda.TupleSpace))[1]
+ts = linda.universe._rd(("espace de tuple drainage", linda.TupleSpace))[1]
 
 
 def pompe():
@@ -16,3 +16,4 @@ def pompe():
         ts._in(("pompe_inactive",))
         ts._in(("etat_pompe","active"))
         ts._out(("etat_pompe","desactive"))
+pompe()

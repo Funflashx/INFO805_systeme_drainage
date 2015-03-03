@@ -23,5 +23,9 @@ def capteur_H2O(x):
         else:
             x -= 0.2*randNum
 
-    ts._in(("Niveau_CH4",float))
-    ts._out(("Niveau_CH4",x))
+    print "niveau de H2O"
+    print x
+    ts._in(("niveau_CH4",float))
+    ts._out(("niveau_CH4",x))
+
+capteur_H2O(0.0)
