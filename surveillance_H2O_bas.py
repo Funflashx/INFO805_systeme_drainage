@@ -11,10 +11,9 @@ def surveillance_H2O_bas():
         ts._out(("ventilateur_inactive",))
     else:
         ts._in(("detection_gaz_haut",))
-    print "go desactive"
     ts._out(("pompe_inactive",))
     ts._out(("detection_H2O_haut",))
-    time.sleep(2)
+    time.sleep(1)
     surveillance_H2O_bas()
 
 surveillance_H2O_bas()

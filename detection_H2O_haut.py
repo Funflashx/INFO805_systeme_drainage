@@ -15,7 +15,7 @@ def detection_H2O_haut():
     if niveau_H2O > seuil_H2O_haut:
         ts._out(("H2O_haut_detection",))
         ts._in(("detection_H2O_haut",))
-    time.sleep(8)
+    time.sleep(1)
     detection_H2O_haut()
 
 

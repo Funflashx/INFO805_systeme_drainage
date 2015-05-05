@@ -17,11 +17,9 @@ def capteur_CO(y):
     else:
         y -= randNum
 
-    print "niveau de CO"
-    print y
     ts._in(("niveau_CO",float))
     ts._out(("niveau_CO",y))
-    time.sleep(3)
+    time.sleep(1)
     capteur_CO(y)
 
 capteur_CO(5.0)

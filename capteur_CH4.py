@@ -2,6 +2,7 @@
 import linda
 import random
 import time
+from random import randint
 
 
 
@@ -18,11 +19,9 @@ def capteur_CH4(y):
     else:
             y -= randNum
 
-    print "niveau de CH4: ..."
-    print y
     ts._in(("niveau_CH4",float))
     ts._out(("niveau_CH4",y))
-    time.sleep(3)
+    time.sleep(1)
     capteur_CH4(y)
 
 capteur_CH4(6.0)

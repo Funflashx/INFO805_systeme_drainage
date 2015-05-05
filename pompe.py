@@ -12,11 +12,12 @@ def pompe():
     if(etat_pompe == "desactive"):
         ts._in(("pompe_active",))
         ts._in(("etat_pompe","desactive"))
-        print "active la pompe"
+        print "POMPE ACTIVEE..."
         ts._out(("etat_pompe","active"))
     else:
         ts._in(("pompe_inactive",))
         ts._in(("etat_pompe","active"))
+        print "...POMPE DESACTIVEE"
         ts._out(("etat_pompe","desactive"))
     time.sleep(2)
     pompe()

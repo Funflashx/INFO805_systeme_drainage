@@ -13,9 +13,9 @@ def detection_H2O_bas():
     if (niveau_H2O < seuil_H2O_bas):
         ts._in(("detection_H2O_bas",))
         ts._out(("H2O_bas_detection",))
-        print "H2O bas detecte"
 
-    time.sleep(2)
+
+    time.sleep(1)
     detection_H2O_bas()
 
 detection_H2O_bas()

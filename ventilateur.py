@@ -11,13 +11,15 @@ def ventilateur():
     if(etat_ventilateur == "desactive"):
         ts._in(("ventilateur_active",))
         ts._in(("etat_ventilateur","desactive"))
+        print "VENTILATEUR EN ROUTE..."
         ts._out(("etat_ventilateur","active"))
     else:
         ts._in(("ventilateur_inactif",))
         ts._in(("etat_ventilateur","active"))
+        print "...VENTILATEUR A L'ARRET"
         ts._out(("etat_ventilateur","desactive"))
 
-    time.sleep(3)
+    time.sleep(1)
     ventilateur()
 
 ventilateur()
