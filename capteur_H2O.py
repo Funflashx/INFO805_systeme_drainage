@@ -1,5 +1,6 @@
 
 import linda
+import time
 import random
 
 
@@ -8,24 +9,22 @@ linda.connect()
 ts = linda.universe._rd(("espace de tuple drainage", linda.TupleSpace))[1]
 
 
+
 def capteur_H2O(x):
     etat_pompe = ts._rd(("etat_pompe",str))[1]
-    etat_ventilateur = ts._rd(("etat_ventilateur",str))[1]
     randNum = random.random()
-    if etat_ventilateur == "desactive":
-        if etat_pompe== "desactive":
-            x += 0.2*randNum
-        else:
-            x -= 0.2*randNum
+    if etat_pompe== "desactive":
+        x += randNum
+
     else:
-        if etat_pompe== "desactive":
-            x += 0.2*randNum
-        else:
-            x -= 0.2*randNum
+        x -= randNum
+
 
     print "niveau de H2O"
     print x
-    ts._in(("niveau_CH4",float))
-    ts._out(("niveau_CH4",x))
+    ts._in(("niveau_H2O",float))
+    ts._out(("niveau_H2O",x))
+    time.sleep(3)
+    capteur_H2O(x)
 
-capteur_H2O(0.0)
+capteur_H2O(10.0)

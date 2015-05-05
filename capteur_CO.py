@@ -1,5 +1,6 @@
 import linda
 import random
+import time
 
 
 
@@ -8,23 +9,19 @@ ts = linda.universe._rd(("espace de tuple drainage", linda.TupleSpace))[1]
 
 
 def capteur_CO(y):
-    etat_pompe = ts._rd(("etat_pompe",str))[1]
+
     etat_ventilateur = ts._rd(("etat_ventilateur",str))[1]
     randNum = random.random()
     if etat_ventilateur == "desactive":
-        if etat_pompe== "desactive":
-            y += 0.4*randNum
-        else:
-            y += 0.4*randNum
+        y += randNum
     else:
-        if etat_pompe== "desactive":
-            y -= 0.4*randNum
-        else:
-            y -= 0.4*randNum
+        y -= randNum
 
     print "niveau de CO"
     print y
-    ts._in(("niveau_CH4",float))
-    ts._out(("niveau_CH4",y))
+    ts._in(("niveau_CO",float))
+    ts._out(("niveau_CO",y))
+    time.sleep(3)
+    capteur_CO(y)
 
-capteur_CO(0.0)
+capteur_CO(5.0)
