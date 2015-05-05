@@ -20,9 +20,14 @@ def surveillance_H2O_haut():
         ts._out(("detection_gaz_haut",))
 
     else:
-        print("activation du ventilateur, detection_gaz_bas")
-        ts._out(("ventilateur_active",))
-        ts._out(("detection_gaz_bas",))
+        print("activation de la pompe impossible car il y a trop de gaz")
+        time.sleep(2)
+        ts._out(("H2O_haut_detection",))
+        # ts._out(("ventilateur_active",))
+        # ts._out(("detection_gaz_normal",))
+        # etat_ventilateur = ts._rd(("etat_ventilateur",str))[1]
+        # if etat_ventilateur == "desactive":
+        #     ts._in(("ventilateur_active",))
     time.sleep(2)
     surveillance_H2O_haut()
 

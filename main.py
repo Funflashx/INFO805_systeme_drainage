@@ -12,10 +12,11 @@ ts._out(("niveau_CO",5.0))
 ts._out(("etat_pompe","desactive"))
 ts._out(("etat_ventilateur","desactive"))
 ts._out(("detection_H20_haut",))
+ts._out(("detection_gaz_haut",))
 
 
-ts._out(("seuil_CH4",100.0))
-ts._out(("seuil_CO",100.0))
+ts._out(("seuil_CH4",10.0))
+ts._out(("seuil_CO",10.0))
 ts._out(("seuil_H2O_haut",15.0))
 ts._out(("seuil_H2O_bas",2.5))
 
