@@ -35,6 +35,8 @@
 
 # IntelliJ
 out/
+linda/
+prettyDisplay/linda
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
